@@ -1,0 +1,99 @@
+<html>
+<head>
+   
+    <title> login</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#829D78;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color:#FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color:#829D78 ;
+            color:black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: white;
+        }
+        .error-message {
+            color: red;
+            font-size: 14px;
+            display: none;
+            text-align: center;
+        }
+    </style>
+<script>
+function yooo()
+{
+//alert(localStorage.getItem("username"));
+//alert(localStorage.getItem("password"));
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
+let uname = localStorage.getItem("username");
+let pass = localStorage.getItem("password");
+if(username == uname && password==pass)
+{alert("you are valid");
+window.location.href="homepg.html";
+}
+else{ alert("intruder");}
+    }
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+           
+
+            // Simple validation (you can expand it as needed)
+            if (username === 'afreena' && password === '1234') {
+                alert('Login successful');
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Style Edge</h2>
+        <form id="loginForm">
+            <input type="text" class="input-field" id="username" placeholder="Enter Username" required><br>
+            <input type="password" class="input-field" id="password" placeholder="Enter Password" required><br>
+           
+        </form>
+<button type="submit" class="login-btn"onclick="yooo()">Login</button>
+        <div class="error-message" id="errorMessage">Invalid username or password</div>
+    </div>
+
+   
+</body>
+</html>
